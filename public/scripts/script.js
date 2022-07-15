@@ -1,5 +1,4 @@
 "user strict";
-console.log("This is client side scritpting");
 
 const Get_Weather = document.querySelector("#search");
 const weatherAdderess = document.querySelector(".address_input");
