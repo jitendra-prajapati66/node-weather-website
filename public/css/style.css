@@ -1,0 +1,34 @@
+h1 {
+  color: darkcyan;
+  font-weight: 600;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  object-fit: fill;
+  display: inline;
+}
+.address_input {
+  transition: all 0.3s;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+}
+.address_input:focus {
+  outline: none;
+  border-color: #686b68;
+  box-shadow: 0 0 0 0.2rem rgba(128, 133, 130, 0.25);
+}
+#search {
+  transition: all 0.3s;
+  color: whitesmoke;
+  outline: none;
+  background-color: lightslategray;
+}
+
+#search:focus {
+  box-shadow: 0 0 0 0.2rem rgba(128, 133, 130, 0.25);
+}
