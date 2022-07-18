@@ -25,7 +25,7 @@ Get_Weather.addEventListener("click", function (e) {
   if (weatherAdderess.value) {
     message_1.textContent = "Loading...";
     message_2.textContent = "";
-    fetch(`http://localhost:3000/weather?adderess=${weatherAdderess.value}`)
+    fetch(`/weather?adderess=${weatherAdderess.value}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("There is problwm with addresstry another search");

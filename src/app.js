@@ -5,6 +5,7 @@ console.log(path.join(__dirname, "../public"));
 const geocode = require("./utils/geoCode");
 const forecast = require("./utils/forecast");
 const getPhoto = require("./utils/getPhoto");
+const port = process.env.PORT || 3000;
 
 //out application
 const application = express();
@@ -107,6 +108,6 @@ application.get("*", (req, res) => {
 });
 
 //to end application
-application.listen("3000", () => {
+application.listen(port, () => {
   console.log("server port No :3000");
 });
