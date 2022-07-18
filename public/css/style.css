@@ -14,7 +14,6 @@ img {
 .address_input {
   transition: all 0.3s;
   padding: 8px;
-  border-radius: 10px;
   border: 1px solid #cccccc;
 }
 .address_input:focus {
