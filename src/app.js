@@ -50,14 +50,25 @@ application.get("/help/*", (req, res) => {
 application.get("/about", (req, res) => {
   console.log(req.query.adderess);
   getPhoto(req.query.adderess, (error, response) => {
-    if (error) {
-      return res.send({ error });
+    if (req.query.adderess == "c") {
+      if (error) {
+        return res.send({ error });
+      }
+      console.log(response);
+      res.render("about", {
+        name: "prajapati Jitendra",
+        path: `${response}`,
+      });
+    } else {
+      if (error) {
+        return res.send({ error });
+      }
+      console.log(response);
+      res.render("about", {
+        name: "prajapati Jitendra",
+        path: "./image/jitendra.jpg",
+      });
     }
-    console.log(response);
-    res.render("about", {
-      name: "jitendra prajapati",
-      path: response,
-    });
   });
 });
 
@@ -79,7 +90,7 @@ application.get("/weather", (req, res) => {
       forecast(
         latitude,
         longitude,
-        (error, { weatherDesc, temperature, precip } = {}) => {
+        (error, { weatherDesc, temperature, precip, humidity } = {}) => {
           if (error) {
             // return console.log("Error In Forecast", error);
             return res.send({ error: error });
@@ -88,7 +99,7 @@ application.get("/weather", (req, res) => {
           // console.log("Data : ", forecastData);
           res.send({
             location: location,
-            forecast: ` ${weatherDesc[0]} untill evenning. It is currently ${temperature} ° out there ,There is ${precip} chance of rain `,
+            forecast: ` ${weatherDesc[0]} untill evenning. It is currently ${temperature} ° And ${humidity} humidity out there ,There is ${precip} chance of rain `,
             // weather: weatherDesc[0],
             // temprature: temperature,
           });
